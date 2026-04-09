@@ -3,88 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSGH | 聖安地列斯綜合醫院</title>
-    <meta property="og:title" content="Spotlight | Spotlight洛聖都綜合醫院">
-    <meta property="og:description" content="專業醫療扮演，守護每一份演繹的重量。">
-    <meta property="og:image" content=" ">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Spotlight | 聚光燈洛聖都綜合醫院</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;600;800&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script> </head>
+</head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="#" class="nav-logo">Spotlight<span>MEDICAL</span></a>
-        <ul class="nav-menu">
-            <li><a href="#home">首頁</a></li>
-            <li><a href="#rules">醫護守則</a></li>
-            <li><a href="#recruitment">人才招募</a></li>
-            <li><a href="https://forms.gle/MvExhzf4jCNK97Ec6" class="nav-btn">立即應徵</a></li>
-        </ul>
+        <a href="#" class="nav-logo">SPOTLIGHT<span>MEDICAL</span></a>
+        <div class="nav-links">
+            <a href="#rules">GUIDELINES</a>
+            <a href="#team">TEAM</a>
+            <a href="#recruitment" class="nav-cta">JOIN US</a>
+        </div>
     </div>
 </nav>
 
-<header id="home" class="hero-section">
+<header id="home" class="hero">
+    <div class="hero-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" alt="Hospital">
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <span class="badge">EST. 2026 SPOTLIGHT LOS SANTOS</span>
-        <h1>We Heal As One</h1>
-        <p>在混亂的城市中，我們是唯一的秩序。專業醫療扮演，守護每一份演繹的重量。</p>
-        <div class="hero-btns">
-            <a href="#rules" class="btn-main">就醫須知</a>
-            <a href="#recruitment" class="btn-sub">加入團隊</a>
-        </div>
+        <div class="scroll-tag">SPOTLIGHT LOS SANTOS MEDICAL CENTER</div>
+        <h1>PRECISION <br>IN <span>EVERY ACT.</span></h1>
+        <p>專業、理性、代入。我們不僅治療傷口，更在續寫屬於您的角色故事。</p>
+        <a href="#rules" class="btn-glass">查看就醫須知</a>
     </div>
 </header>
 
-<section id="rules" class="content-section">
+<section id="rules" class="rules-section">
     <div class="container">
-        <h2 class="title-main">醫療扮演教學 <span>/ GUIDELINES</span></h2>
-        <div class="glass-grid">
-            <div class="glass-card">
-                <div class="icon">🚑</div>
-                <h3>報案規範</h3>
-                <p>使用 <code>/311</code> 詳述傷因，避免「救我、死掉」等無效內容，提升雙方演繹代入感。</p>
+        <div class="split-header">
+            <h2 class="section-title">GUIDELINES<br><span>醫療扮演守則</span></h2>
+            <p>優質的醫護環境需要每一位市民共同維護，請遵循以下演繹規範，讓醫療演出更加真實。</p>
+        </div>
+        
+        <div class="rule-cards">
+            <div class="rule-card">
+                <span class="card-num">01</span>
+                <i class="fas fa-phone-volume"></i>
+                <h3>報案準則 / 311</h3>
+                <p>請使用 /311 詳述傷因與環境。例如：「[車禍] 昏迷，軍團廣場門口」。優質的報案內容能讓醫護更精準地準備器材。</p>
             </div>
-            <div class="glass-card">
-                <div class="icon">💉</div>
-                <h3>互動流程</h3>
-                <p>嚴禁倒地後自行就醫。抵達現場後請留意 <code>/me</code> 描述，您的回應決定治療深度。</p>
+            
+            <div class="rule-card">
+                <span class="card-num">02</span>
+                <i class="fas fa-hand-holding-medical"></i>
+                <h3>現場演繹 / ME</h3>
+                <p>醫護抵達後請保持冷靜。配合醫護的 /me 動令進行疼痛、休克或傷勢演出，您的回應將直接決定救治成功率。</p>
             </div>
-            <div class="glass-card">
-                <div class="icon">🏥</div>
-                <h3>住院制度</h3>
-                <p>短期重複受傷需留院 15-30 分鐘。尊重傷勢，切勿急於重回現場。</p>
+            
+            <div class="rule-card">
+                <span class="card-num">03</span>
+                <i class="fas fa-hospital-user"></i>
+                <h3>留院觀察制度</h3>
+                <p>重傷市民需強制留院觀察。請在此期間放鬆或與醫護進行日常對話。尊重生命價值，切勿急於重回衝突現場。</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="recruitment" class="recruit-section">
+<section id="team" class="team-section">
     <div class="container">
-        <div class="recruit-wrapper">
-            <div class="recruit-text">
-                <h2>加入實習醫生 (EMT)</h2>
-                <p>我們不只是在徵召醫師，我們在尋找能在硝煙與混亂中，以理性執筆、續寫生命的敘事者。</p>
-                <ul class="check-list">
-                    <li>具備基礎醫療常識（或具備高度學習熱誠）</li>
-                    <li>具備極強的抗壓性。在混亂或槍戰現場仍能保持冷靜</li>
-                    <li>嚴守病患隱私，無視幫派立場</li>
-                </ul>
+        <div class="centered-header">
+            <span class="sub-label">ELITE MEDICAL STAFF</span>
+            <h2>精英醫療團隊</h2>
+        </div>
+
+        <div class="tier-container">
+            <div class="tier-label">CHIEF EXECUTIVE</div>
+            <div class="chief-card">
+                <div class="chief-info">
+                    <span class="rank-tag">院長 CHIEF</span>
+                    <h2>溫書玥</h2>
+                    <p>全院總負責人。主導洛聖都醫療體系規範、人事與行政決策，守護聚光燈醫護之核心價值。</p>
+                </div>
             </div>
-            <div class="recruit-card">
-                <h3>應徵流程</h3>
-                <div class="step-item"><span>1</span> 填寫筆試履歷</div>
-                <div class="step-item"><span>2</span> 院方審核與口試</div>
-                <div class="step-item"><span>3</span> 實習期評估</div>
-                <a href="https://forms.gle/MvExhzf4jCNK97Ec6" class="btn-apply-now">點此開始</a>
+        </div>
+
+        <div class="tier-container">
+            <div class="tier-label">MEDICAL DIRECTOR</div>
+            <div class="staff-hero-card er-theme">
+                <div class="staff-badge er">DIRECTOR / EMERGENCY SPECIALIST</div>
+                <div class="staff-hero-content">
+                    <div class="staff-main-info">
+                        <h3>夏羽姍</h3>
+                        <div class="dept-tag"><i class="fas fa-stretcher"></i> 急診醫學專科</div>
+                        <p>急診科首席。負責洛聖都緊急醫療調度、重大事故現場指揮及急診技術培訓。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tier-label">SPECIALIZED DEPARTMENTS</div>
+        <div class="specialist-grid">
+            <div class="spec-card psych">
+                <div class="spec-icon"><i class="fas fa-brain"></i></div>
+                <span class="spec-rank">專科醫生</span>
+                <h4 class="spec-name">高荸梓</h4>
+                <div class="spec-dept">心理學科</div>
+            </div>
+            <div class="spec-card cardio">
+                <div class="spec-icon"><i class="fas fa-heart-pulse"></i></div>
+                <span class="spec-rank">專科醫生</span>
+                <h4 class="spec-name">黃曉翔</h4>
+                <div class="spec-dept">心臟外科</div>
+            </div>
+            <div class="spec-card neuro">
+                <div class="spec-icon"><i class="fas fa-microscope"></i></div>
+                <span class="spec-rank">專科醫生</span>
+                <h4 class="spec-name">天逸</h4>
+                <div class="spec-dept">神經外科</div>
+            </div>
+        </div>
+
+        <div class="other-staff-section">
+            <div class="staff-sub-grid">
+                <div class="staff-group">
+                    <h5 class="group-title">ATTENDING 主治醫生</h5>
+                    <div class="name-list"><div class="name-item">成員姓名</div></div>
+                </div>
+                <div class="staff-group">
+                    <h5 class="group-title">RESIDENT 住院醫生</h5>
+                    <div class="name-list">
+                        <div class="name-item">成員姓名</div>
+                        <div class="name-item">成員姓名</div>
+                    </div>
+                </div>
+                <div class="staff-group">
+                    <h5 class="group-title">INTERN 實習醫生</h5>
+                    <div class="name-list">
+                        <div class="name-item">成員姓名</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="recruitment" class="join-section">
+    <div class="container">
+        <div class="join-container">
+            <div class="join-image">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1000" alt="Join Us">
+            </div>
+            <div class="join-content">
+                <div class="join-inner">
+                    <span class="badge">Hiring Now</span>
+                    <h2>加入聚光燈醫療團隊</h2>
+                    <p>我們在尋找熱衷於「醫護演繹」的靈魂。如果你具備高度的耐心與冷靜，Spotlight 就是你的舞台。</p>
+                    <div class="join-steps">
+                        <div class="step"><i class="fas fa-file-pen"></i><span>填寫履歷</span></div>
+                        <div class="step"><i class="fas fa-comments"></i><span>面談口試</span></div>
+                        <div class="step"><i class="fas fa-id-card"></i><span>實習考核</span></div>
+                    </div>
+                    <a href="https://forms.gle/MvExhzf4jCNK97Ec6" class="btn-primary-new" target="_blank">立即應徵報名</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 SPOTLIGHT MEDICAL CENTER. FOR ROLEPLAY USE ONLY.</p>
+    <p>© 2026 SPOTLIGHT MEDICAL CENTER. <span>FOR RP USE ONLY</span></p>
 </footer>
 
 <script src="script.js"></script>

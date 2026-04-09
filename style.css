@@ -1,162 +1,211 @@
 :root {
-    --main-blue: #0052cc;
-    --dark-blue: #071a2d;
-    --soft-blue: #eef4ff;
-    --white: #ffffff;
-    --text: #334155;
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --primary-blue: #004cff;
+    --dark-bg: #05070a;
+    --text-white: #ffffff;
+    --text-gray: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    
+    /* 專科顏色 */
+    --color-psych: #00ffc3;
+    --color-cardio: #ff3e3e;
+    --color-neuro: #9d8cff;
+    --color-er: #ff5e3a;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
-    font-family: 'Noto Sans TC', sans-serif; 
-    color: var(--text); 
-    line-height: 1.8;
-    background-color: var(--soft-blue);
+    font-family: 'Lexend Deca', 'Noto Sans TC', sans-serif; 
+    background-color: var(--dark-bg); 
+    color: var(--text-white);
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0; width: 100%;
-    padding: 1.5rem 0;
-    z-index: 1000;
-    transition: var(--transition);
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 30px 60px; display: flex; justify-content: space-between; align-items: center;
+    transition: 0.5s ease;
 }
-
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px 60px;
+    background: rgba(5, 7, 10, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
 }
+.nav-logo { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; text-decoration: none; color: white; }
+.nav-logo span { font-weight: 300; opacity: 0.5; }
+.nav-links { display: flex; gap: 40px; align-items: center; }
+.nav-links a { text-decoration: none; color: white; font-size: 0.8rem; font-weight: 600; }
+.nav-cta { background: var(--primary-blue); padding: 10px 25px; border-radius: 4px; }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+/* Hero */
+.hero {
+    height: 100vh; position: relative; display: flex; align-items: center; justify-content: center;
+    overflow: hidden; text-align: center;
 }
-
-.nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--dark-blue);
-    letter-spacing: 1px;
-}
-
-.nav-logo span { color: var(--main-blue); margin-left: 5px; }
-
-.nav-menu { display: flex; list-style: none; align-items: center; gap: 2rem; }
-.nav-menu a { text-decoration: none; color: var(--dark-blue); font-weight: 500; transition: 0.3s; }
-.nav-menu a:hover { color: var(--main-blue); }
-
-.nav-btn {
-    background: var(--main-blue);
-    color: white !important;
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
-}
-
-/* Hero Section */
-.hero-section {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    text-align: center;
-}
-
+.hero-image-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
 .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    /* 增加深色過渡，確保文字清晰 */
-    background: linear-gradient(to bottom, 
-        rgba(7, 26, 45, 0.9) 0%, 
-        rgba(7, 26, 45, 0.4) 50%, 
-        rgba(0, 82, 204, 0.2) 100%);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 20%, var(--dark-bg) 100%);
 }
-
-.hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
-.badge { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; }
-.hero-content h1 { font-size: 4.5rem; margin: 20px 0; letter-spacing: -1px; }
-
-.btn-main {
-    padding: 1rem 2.5rem;
-    background: var(--main-blue);
+.hero h1 { font-size: 5.5rem; font-weight: 800; line-height: 0.9; margin-bottom: 30px; }
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 40px; /* 增加下邊距 (40px)，推開按鈕 */
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.8; /* 增加行高，讓文字更好讀 */
+}
+.hero h1 span { color: transparent; -webkit-text-stroke: 1px white; }
+.btn-glass {
+    display: inline-block; /* 確保按鈕遵循 margin 規則 */
+    padding: 18px 40px;
+    border: 1px solid white;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    margin-right: 15px;
-    display: inline-block;
-}
-
-/* Glass Card Section */
-.container { max-width: 1200px; margin: 0 auto; padding: 100px 2rem; }
-.title-main { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--dark-blue); }
-.title-main span { color: #cbd5e1; font-weight: 300; font-size: 1.5rem; }
-
-.glass-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-
-.glass-card {
-    background: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 40px;
-    border-radius: 20px;
-    transition: var(--transition);
+    transition: 0.3s;
+    margin-top: 10px; /* 額外保險間距 */
+}
+.btn-glass:hover { background: white; color: black; }
+
+/* Team Layout */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.team-section { padding: 120px 0; }
+.centered-header { text-align: center; margin-bottom: 80px; }
+.tier-label { font-size: 0.75rem; color: var(--primary-blue); letter-spacing: 5px; font-weight: 800; margin: 60px 0 30px; border-left: 3px solid var(--primary-blue); padding-left: 15px; }
+
+/* Chief Card */
+.chief-card { background: linear-gradient(135deg, #004cff 0%, #001a4d 100%); padding: 60px; border-left: 8px solid white; }
+.chief-info h2 { font-size: 3.5rem; letter-spacing: -2px; }
+
+/* Director (ER) */
+.staff-hero-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 50px; position: relative; }
+.er-theme { border-right: 4px solid var(--color-er); background: linear-gradient(90deg, rgba(255, 94, 58, 0.05) 0%, transparent 100%); }
+.staff-badge.er { background: var(--color-er); padding: 5px 15px; font-size: 0.7rem; font-weight: 800; margin-bottom: 20px; display: inline-block; }
+.dept-tag { color: var(--color-er); font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+/* Specialists */
+.specialist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.spec-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 40px 30px; text-align: center; transition: 0.4s; }
+.spec-card:hover { border-color: white; transform: translateY(-10px); }
+.psych .spec-icon, .psych .spec-dept { color: var(--color-psych); }
+.cardio .spec-icon, .cardio .spec-dept { color: var(--color-cardio); }
+.neuro .spec-icon, .neuro .spec-dept { color: var(--color-neuro); }
+
+/* Other Staff */
+.staff-sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+.name-item { padding: 15px 20px; background: var(--glass); border: 1px solid var(--border-glass); margin-bottom: 10px; transition: 0.3s; }
+.name-item:hover { background: var(--primary-blue); transform: translateX(8px); }
+
+/* Recruitment (修復版) */
+.join-section { padding: 100px 0; }
+.join-container { display: flex; background: white; color: black; border-radius: 8px; overflow: hidden; min-height: 500px; }
+.join-image { flex: 1; position: relative; min-width: 45%; }
+.join-image img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+.join-content { flex: 1.2; padding: 60px; display: flex; align-items: center; }
+.join-steps { margin: 30px 0; display: flex; justify-content: space-between; gap: 10px; }
+.step { text-align: center; flex: 1; }
+.step i { color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 8px; display: block; }
+.step span { font-size: 0.75rem; font-weight: 700; color: #64748b; }
+.btn-primary-new { display: inline-block; background: var(--primary-blue); color: white; padding: 18px 35px; text-decoration: none; font-weight: 700; border-radius: 4px; }
+
+/* --- 就醫須知樣式 --- */
+.rules-section { 
+    padding: 120px 0; 
+    background: #080a0f; /* 稍微深一點的層次感背景 */
 }
 
-.glass-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-.glass-card .icon { font-size: 3rem; margin-bottom: 20px; }
-
-/* Recruitment */
-.recruit-wrapper {
-    display: flex; gap: 50px; align-items: center; flex-wrap: wrap;
-    background: var(--dark-blue);
-    padding: 60px;
-    border-radius: 30px;
-    color: white;
+.split-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    margin-bottom: 80px; 
+    gap: 40px; 
 }
 
-.recruit-text { flex: 1; min-width: 300px; }
-.check-list { list-style: none; margin-top: 20px; }
-.check-list li { margin-bottom: 10px; }
-.check-list li::before { content: '✓'; color: var(--main-blue); margin-right: 10px; font-weight: bold; }
-
-.recruit-card {
-    flex: 0 0 350px;
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    color: var(--dark-blue);
+.section-title { 
+    font-size: 2.5rem; 
+    line-height: 1.1; 
 }
 
-.step-item {
-    padding: 15px 0; border-bottom: 1px solid #eee;
-    display: flex; align-items: center; gap: 15px;
+.section-title span { 
+    font-size: 1rem; 
+    color: var(--text-gray); 
+    font-weight: 400; 
+    display: block;
+    margin-top: 10px;
 }
 
-.step-item span {
-    background: var(--main-blue); color: white; width: 25px; height: 25px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+.split-header p { 
+    max-width: 400px; 
+    color: var(--text-gray); 
 }
 
-.btn-apply-now {
-    display: block; text-align: center; background: var(--main-blue);
-    color: white; text-decoration: none; padding: 15px; border-radius: 10px; margin-top: 25px;
+/* 卡片排版 */
+.rule-cards { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
 }
 
-footer { text-align: center; padding: 50px; background: var(--soft-blue); font-size: 0.8rem; color: #94a3b8; }
+.rule-card { 
+    padding: 50px 35px; 
+    background: var(--glass); 
+    border: 1px solid var(--border-glass);
+    border-radius: 4px; 
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
 
-@media (max-width: 768px) {
-    .hero-content h1 { font-size: 2.5rem; }
-    .nav-menu { display: none; }
+.rule-card:hover { 
+    border-color: var(--primary-blue); 
+    background: rgba(255, 255, 255, 0.05); 
+    transform: translateY(-10px); 
+}
+
+.rule-card i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    display: block;
+}
+
+.card-num { 
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 0.8rem; 
+    color: var(--primary-blue); 
+    font-weight: 800; 
+    opacity: 0.5;
+}
+
+.rule-card h3 { 
+    margin-bottom: 15px; 
+    font-size: 1.4rem; 
+    letter-spacing: -1px; 
+}
+
+.rule-card p { 
+    color: var(--text-gray); 
+    font-size: 0.95rem; 
+    line-height: 1.7;
+}
+
+/* 響應式調整 */
+@media (max-width: 900px) {
+    .rule-cards { grid-template-columns: 1fr; }
+    .split-header { flex-direction: column; align-items: flex-start; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .specialist-grid, .staff-sub-grid, .join-container { grid-template-columns: 1fr; flex-direction: column; }
+    .hero h1 { font-size: 3.5rem; }
 }
